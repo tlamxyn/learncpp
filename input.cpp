@@ -39,7 +39,23 @@ int getIntFromConsole(std::string message = "", std::string errorMessage = "")
 
 void clearIntBuffer(int *number)
 {
+    /**
+     * Explain how: getchar() takes a character out of buffer
+     * - then it is copied to the value of 'number'
+     * - the 'number' then is check if it is end or not
+     * - to preven the inputs of user contain many lines
+     * check if 'number' is end of line or not
+     *
+     * For normal case, the wrong input contain 1 '\n' character
+     * (by Enter). But somehow if user find a way to type more than
+     * one '\n' character without press Enter, that would be bad.
+     * So the statement '(*number) != EOF' is to check for that case
+     */
     while (((*number) = getchar()) != '\n' && (*number) != EOF)
     {
+        /**
+         * Explain what: If the loop is in here, then the buffer
+         * still has wrong inputs from user. So it can be buffed
+         */
     }
 }
