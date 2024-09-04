@@ -59,3 +59,19 @@ void clearIntBuffer(int *number)
          */
     }
 }
+
+int getNumberInRange(int start, int end)
+{
+    std::string inputMessage{"Please input integer number:\n"};
+    std::string errorMessage{"Wrong input, it's not an integer number\n"};
+    int value{getIntFromConsole(inputMessage, errorMessage)};
+
+    while (value < start || value > end)
+    {
+        printf("Wrong input, the value is out of range [%d, %d]\n", start, end);
+        printf("Try again with number in range [%d, %d]\n", start, end);
+        value = getIntFromConsole(inputMessage, errorMessage);
+    }
+
+    return value;
+}
