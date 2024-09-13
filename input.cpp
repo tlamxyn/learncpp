@@ -1,5 +1,6 @@
 #include "input.h"
 #include <stdio.h>
+#include <iostream>
 #include <cstdlib>
 #include <string_view>
 
@@ -15,7 +16,7 @@ int getIntFromConsole(std::string_view message = "", std::string_view errorMessa
 
     while (true)
     {
-        printf("%s", message);
+        std::cout << message;
 
         // Explain what: Check if the input is integer only (no other characters)
         // Explain why 1: Scanf returns number of fields that were successfully converted and assigned
@@ -28,7 +29,7 @@ int getIntFromConsole(std::string_view message = "", std::string_view errorMessa
 
         // The input now is not valid
 
-        printf("%s", errorMessage);
+        std::cout << errorMessage;
 
         // Explain what: is used to clear wrong input value in variable
         clearIntBuffer(&number);
@@ -68,8 +69,8 @@ int getNumberInRange(int start, int end)
 
     while (value < start || value > end)
     {
-        printf("Wrong input, the value is out of range [%d, %d]\n", start, end);
-        printf("Try again with number in range [%d, %d]\n", start, end);
+        std::cout << "Wrong input, the value is out of range [" << start << ", " << end << "]\n";
+        std::cout << "Try again with number in range [" << start << ", " << end << "]\n";
         value = getIntFromConsole(inputMessage, errorMessage);
     }
 
