@@ -2,6 +2,17 @@
 #define _GRAVITY_H_
 
 /**
+ * In formula: s = (u * t) + (a * t^2)/2
+ * `gravity` is `a`
+ */
+constexpr double gravity{9.8};
+
+/**
+ * The height of the ground. Mean 0.
+ */
+constexpr double groundHeight{0.0};
+
+/**
  * `dropObjectFrom(int towerHeight)`
  *
  * With the input is `towerHeight`, print the heights of

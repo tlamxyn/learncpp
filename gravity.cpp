@@ -4,16 +4,14 @@
 
 double calculateObjectHeight(int towerHeight, int second)
 {
-    constexpr double gravity{9.8};
-
     // Using formula: s = (u * t) + (a * t^2)/2
     // here u (initial velocity) = 0, so (u * t) = 0
     double fallDistance{gravity * (second * second) / 2.0};
     double ballHeight{towerHeight - fallDistance};
 
-    if (ballHeight < 0.0)
+    if (ballHeight < groundHeight)
     {
-        return 0.0;
+        return groundHeight;
     }
     return ballHeight;
 }
