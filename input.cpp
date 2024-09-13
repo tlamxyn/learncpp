@@ -32,7 +32,8 @@ int getIntFromConsole(std::string_view message = "", std::string_view errorMessa
         std::cout << errorMessage;
 
         // Explain what: is used to clear wrong input value in variable
-        clearIntBuffer(&number);
+        clearIntBufferV2();
+        // clearIntBuffer(&number);
     }
 
     return number;
@@ -59,6 +60,15 @@ void clearIntBuffer(int *number)
          * still has wrong inputs from user. So it can be buffed
          */
     }
+}
+
+void clearIntBufferV2()
+{
+    // Reset error state of cin
+    std::cin.clear();
+
+    // Ignore everything until EOF. Read until '\n'
+    std::cin.ignore(1000, '\n');
 }
 
 int getNumberInRange(int start, int end)
