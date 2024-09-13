@@ -1,9 +1,9 @@
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
-#include <string>
+#include <string_view>
 
-int getIntFromConsole(std::string, std::string);
+int getIntFromConsole(std::string_view, std::string_view);
 
 void clearIntBuffer(int *);
 

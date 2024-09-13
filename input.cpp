@@ -1,12 +1,12 @@
 #include "input.h"
 #include <stdio.h>
 #include <cstdlib>
-#include <string>
+#include <string_view>
 
-int getIntFromConsole(std::string message = "", std::string errorMessage = "")
+int getIntFromConsole(std::string_view message = "", std::string_view errorMessage = "")
 {
-    const char *cc_message(message.c_str());
-    const char *cc_errorMessage(errorMessage.c_str());
+    // const char *cc_message(message.c_str());
+    // const char *cc_errorMessage(errorMessage.c_str());
 
     int number{};
 
@@ -15,7 +15,7 @@ int getIntFromConsole(std::string message = "", std::string errorMessage = "")
 
     while (true)
     {
-        printf("%s", cc_message);
+        printf("%s", message);
 
         // Explain what: Check if the input is integer only (no other characters)
         // Explain why 1: Scanf returns number of fields that were successfully converted and assigned
@@ -28,7 +28,7 @@ int getIntFromConsole(std::string message = "", std::string errorMessage = "")
 
         // The input now is not valid
 
-        printf("%s", cc_errorMessage);
+        printf("%s", errorMessage);
 
         // Explain what: is used to clear wrong input value in variable
         clearIntBuffer(&number);
@@ -62,8 +62,8 @@ void clearIntBuffer(int *number)
 
 int getNumberInRange(int start, int end)
 {
-    std::string inputMessage{"Please input integer number:\n"};
-    std::string errorMessage{"Wrong input, it's not an integer number\n"};
+    std::string_view inputMessage{"Please input integer number:\n"};
+    std::string_view errorMessage{"Wrong input, it's not an integer number\n"};
     int value{getIntFromConsole(inputMessage, errorMessage)};
 
     while (value < start || value > end)
