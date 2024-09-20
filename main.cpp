@@ -3,21 +3,26 @@
  * Calculate the height of a ball which fall from a certain height
  * from a tower until it's on the ground
  */
-
+#include "computing.h"
 #include "input.h"
-#include "gravity.h"
 
 #include <string>
 #include <iostream>
 
 int main()
 {
+    std::string_view msg = "Enter an integer: \n";
+    std::string_view errMsg = "Wrong, it's an integer\n";
+    int number{getIntFromConsole(msg, errMsg)};
 
-    printf("Calculate the fall of a ball whose height depends on user input\n");
-
-    long towerheight{getNumberInRange(0, 1000000)};
-
-    dropObjectFrom(towerheight);
-
+    std::cout << number << " is ";
+    if (isEven(number))
+    {
+        std::cout << "even\n";
+    }
+    else
+    {
+        std::cout << "odd\n";
+    }
     return 0;
 }
