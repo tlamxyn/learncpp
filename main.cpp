@@ -13,10 +13,10 @@ int main()
 {
     std::string_view msg = "Enter an integer: \n";
     std::string_view errMsg = "Wrong, it's an integer\n";
-    int number{getIntFromConsole(msg, errMsg)};
+    int number{learncpp::getIntFromConsole(msg, errMsg)};
 
     std::cout << number << " is ";
-    if (isEven(number))
+    if (learncpp::isEven(number))
     {
         std::cout << "even\n";
     }
