@@ -41,7 +41,7 @@ namespace learncpp
         return number;
     }
 
-    void clearIntBuffer(int *number)
+    static void clearIntBuffer(int *number)
     {
         /**
          * Explain how: getchar() takes a character out of buffer
@@ -64,7 +64,7 @@ namespace learncpp
         }
     }
 
-    void clearIntBufferV2()
+    static void clearIntBufferV2()
     {
         // Reset error state of cin
         std::cin.clear();

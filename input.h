@@ -7,9 +7,9 @@ namespace learncpp
 {
     int getIntFromConsole(std::string_view, std::string_view);
 
-    void clearIntBuffer(int *);
+    static void clearIntBuffer(int *);
 
-    void clearIntBufferV2();
+    static void clearIntBufferV2();
 
     int getNumberInRange(int, int);
 }
